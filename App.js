@@ -5,7 +5,13 @@ import BookTile from './component/BookTile'
 export default function App() {
   return (
     <ScrollView style={StyleSheet.container}>
-         <Text style={styles.header1}>Bookshop</Text>
+      <View style={styles.naast}>
+           <Text style={styles.header1}>Bookshop</Text>
+            <View style={styles.try}>
+              <Image style={styles.cart} source={require("./assets/shopping-cart.png")}></Image>
+              <Text>1</Text>
+            </View>
+      </View>
         <View style={styles.tilesContainer}>
           <BookTile title="Book Title" subtitlepwd="by some random dude" text="Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw," isbn="ISBN 123456789" />
           <BookTile title="Book Title" subtitlepwd="by some random dude" text="Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw," isbn="ISBN 123456789" />
@@ -56,6 +62,24 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     marginVertical: '2%',
   },
- 
 
+  cart: {
+    width: 20,
+    height: 20,
+  },
+
+  naast:{
+    flex: 1,
+    flexDirection: 'row',
+    flexGrow: 0,
+    flexShrink: 0,
+    justifyContent: "space-between"
+  },
+
+  try: {
+    marginTop: "5%",
+    marginRight: "5%",
+    justifyContent:"flex-end"
+  }
+ 
 });
