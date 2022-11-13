@@ -1,10 +1,16 @@
 import { StyleSheet, Text, View, Image, ScrollView, TouchableNativeFeedback } from 'react-native';
 
+function handlePress() {
+    console.log("touched");
+  }
+
 const BookTile = (props)=>{
     return(
         <View style={styles.tile}>
         <View style={styles.tileDetail}>
-          <Text style={styles.tileHeader}>{props.title}</Text>
+            <TouchableNativeFeedback onPress={() => handlePress()}>
+                <Text style={styles.tileHeader}>{props.title}</Text>
+            </TouchableNativeFeedback>
           <Text style={styles.tileText}>{props.subtitlepwd}</Text>
           <Text style={styles.tileSmalText}>{props.text}</Text>
           <View style={styles.naast}>
